@@ -1,0 +1,75 @@
+project:
+  name: "JARVIS"
+  version: "0.1.0"
+  description: "Multilingual voice assistant"
+  author: "Your Name"
+
+speech:
+  stt:
+    engine: "faster_whisper"
+    model_size: "small"
+    language: null
+    temperature: 0
+    batch_size: 1
+    compute_type: "float32"
+  
+  tts:
+    engine: "elevenlabs"
+    voice_stability: 0.5
+    similarity_boost: 0.75
+    output_format: "mp3_44100_128"
+
+nlp:
+  intent_classifier:
+    model_type: "tfidf_naive_bayes"
+    vectorizer_max_features: 1000
+    min_df: 1
+    max_df: 0.9
+    test_size: 0.2
+  
+  language_detector:
+    model: "langdetect"
+
+activation:
+  wake_word:
+    keywords: ["jarvis", "hey jarvis", "jarvis ji", "arre jarvis"]
+    engine: "porcupine"
+    sensitivity: 0.5
+  
+  gesture:
+    engine: "mediapipe"
+    detection_confidence: 0.7
+    tracking_confidence: 0.5
+
+latency:
+  stt_timeout: 10
+  npl_timeout: 5
+  tts_timeout: 15
+  action_timeout: 10
+  total_target: 1000
+
+database:
+  type: "sqlite"
+  path: "jarvis.db"
+  echo: false
+  pool_size: 10
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/jarvis.log"
+  max_bytes: 10485760
+  backup_count: 5
+
+secrets:
+  openai_api_key: "${OPENAI_API_KEY}"
+  elevenlabs_api_key: "${ELEVENLABS_API_KEY}"
+  porcupine_access_key: "${PORCUPINE_ACCESS_KEY}"
+
+features:
+  enable_local_whisper: true
+  enable_local_llm: false
+  enable_streaming_tts: true
+  enable_gesture_activation: true
+  enable_android_automation: false
+  enable_desktop_automation: false

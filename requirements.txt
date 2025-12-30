@@ -1,0 +1,60 @@
+# Core
+python-dotenv==1.0.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Speech & Audio
+faster-whisper==1.0.2
+openai==1.40.0
+elevenlabs==1.0.0
+pyttsx3==2.90
+librosa==0.10.2
+soundfile==0.12.1
+pyaudio==0.2.14
+pydub==0.25.1
+
+# NLP & Language
+spacy==3.7.6
+nltk==3.8.1
+scikit-learn==1.5.2
+scipy==1.14.1
+numpy==1.26.4
+pandas==2.2.3
+
+# Activation & Vision
+mediapipe==0.10.14
+opencv-python==4.10.0.84
+pillow==10.4.0
+# porcupine-python==2.2.2  # Note: requires Picovoice account
+
+# Backend & API
+fastapi==0.115.0
+uvicorn==0.32.0
+websockets==15.0.1
+sqlalchemy==2.0.36
+alembic==1.15.1
+
+# Android Automation
+uiautomator2==3.1.2
+pure-python-adb==0.3.0.post2
+
+# Desktop Automation
+pyautogui==0.9.54
+pygetwindow==0.0.9
+pyperclip==1.9.0
+
+# Development & Testing
+pytest==8.3.3
+pytest-asyncio==0.24.0
+black==24.8.0
+flake8==7.1.1
+pylint==3.3.7
+mypy==1.11.2
+jupyter==1.1.1
+ipython==8.27.0
+
+# Utilities
+tqdm==4.66.5
+requests==2.32.3
+pyyaml==6.0.2
+python-multipart==0.0.9
